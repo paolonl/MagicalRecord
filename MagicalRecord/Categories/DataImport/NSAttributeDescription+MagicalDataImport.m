@@ -34,9 +34,14 @@
     {
         if (attributeType == NSDateAttributeType)
         {
-            if (![value isKindOfClass:[NSDate class]]) 
+            NSString *dateFormat = [[self userInfo] valueForKey:kMagicalRecordImportCustomDateFormatKey];
+            
+            if ([value isKindOfClass:[NSNumber class]])
             {
-                NSString *dateFormat = [[self userInfo] valueForKey:kMagicalRecordImportCustomDateFormatKey];
+                value = dateFromNumber(value, [dateFormat isEqualToString:kMagicalRecordImportUnixTimeMillisecondsFormatString]);
+            }
+            else
+            {
                 value = dateFromString([value description], dateFormat ?: kMagicalRecordImportDefaultDateFormatString);
             }
         }

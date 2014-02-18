@@ -13,6 +13,7 @@ void MR_swapMethodsFromClass(Class c, SEL orig, SEL new);
 
 NSString * const kMagicalRecordImportCustomDateFormatKey            = @"dateFormat";
 NSString * const kMagicalRecordImportDefaultDateFormatString        = @"yyyy-MM-dd'T'HH:mm:ssz";
+NSString * const kMagicalRecordImportUnixTimeMillisecondsFormatString         = @"unixTimeMilliseconds";
 
 NSString * const kMagicalRecordImportAttributeKeyMapKey             = @"mappedKeyName";
 NSString * const kMagicalRecordImportAttributeValueClassNameKey     = @"attributeValueClassName";
